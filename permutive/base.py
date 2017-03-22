@@ -69,3 +69,4 @@ class RequestsHTTPClient(HTTPClient):
         except ValueError:
             # Non error status with empty body
             return True
+

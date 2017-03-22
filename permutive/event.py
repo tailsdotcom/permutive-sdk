@@ -18,3 +18,19 @@ class Event(Resource):
             'name': event_name,
             'properties': properties
         })
+
+    def get(self, user_id, start=None, end=None):
+        """
+         Fetch events for a given user_id
+        :param user_id: 
+        :param start: (optional) datetime
+        :param end: (optional) datetime
+        :return: 
+        """
+        data = {'user_id': user_id}
+        if start:
+            data['start'] = start.isoformat()
+        if end:
+            data['end'] = end.isoformat()
+
+        return self.client.request('GET', '/events', data=data)
