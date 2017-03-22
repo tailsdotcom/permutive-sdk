@@ -1,4 +1,4 @@
-Funniest
+Permutive SDK
 --------
 
 Instructions::
@@ -6,7 +6,7 @@ Instructions::
     >>> import permutive
     >>> permutive = Permutive('<private_api_key>')
 
-Users::
+    Users:
     Fetch an existing user by using a custom_id:
     >>> permutive.users.get('dnshio')
     {
@@ -20,7 +20,7 @@ Users::
     Create and identify a user:
     >>> permutive.users.create_and_identify('dnshio', email='dnshio@example.com', gender='male')
 
-Events::
+    Events:
     Track an event
     >>> response = permutive.users.get('dnshio')
     >>> user_id = response.get('id')
