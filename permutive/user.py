@@ -1,4 +1,5 @@
-from permutive.base import Resource
+# -*- coding: utf-8 -*-
+from .base import Resource
 
 
 class User(Resource):

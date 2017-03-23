@@ -1,6 +1,7 @@
+# -*- coding: utf-8 -*-
 import requests
 
-from permutive.exceptions import PermutiveApiException
+from .exceptions import PermutiveApiException
 
 
 class HTTPClient(object):

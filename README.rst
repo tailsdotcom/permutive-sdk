@@ -1,27 +1,40 @@
+===============================
 Permutive SDK
+===============================
+
+
+.. image:: https://img.shields.io/pypi/v/permutive.svg
+        :target: https://pypi.python.org/pypi/permutive
+
+.. image:: https://img.shields.io/travis/tailsdotcom/permutive.svg
+        :target: https://travis-ci.org/tailsdotcom/permutive
+
+.. image:: https://readthedocs.org/projects/permutive/badge/?version=latest
+        :target: https://permutive.readthedocs.io/en/latest/?badge=latest
+        :alt: Documentation Status
+
+.. image:: https://pyup.io/repos/github/tailsdotcom/permutive/shield.svg
+     :target: https://pyup.io/repos/github/tailsdotcom/permutive/
+     :alt: Updates
+
+
+Python wrapper for Permutive API
+
+
+* Free software: MIT license
+* Documentation: https://permutive.readthedocs.io.
+
+
+Features
 --------
 
-Instructions::
+* TODO
 
-    >>> import permutive
-    >>> permutive = Permutive('<private_api_key>')
+Credits
+---------
 
-    Users:
-    Fetch an existing user by using a custom_id:
-    >>> permutive.users.get('dnshio')
-    {
-         u'id': u'12345',
-         u'properties': {u'email': u'test@example.com'},
-         u'updated': u'2017-03-22T14:59:06.828Z',
-         u'user_id': u'4041dac0-9f23-4b72-96fd-8154e7c5f4ef'
-    }
-    Use the `id` returned when sending events
+This package was created with Cookiecutter_ and the `audreyr/cookiecutter-pypackage`_ project template.
 
-    Create and identify a user:
-    >>> permutive.users.create_and_identify('dnshio', email='dnshio@example.com', gender='male')
+.. _Cookiecutter: https://github.com/audreyr/cookiecutter
+.. _`audreyr/cookiecutter-pypackage`: https://github.com/audreyr/cookiecutter-pypackage
 
-    Events:
-    Track an event
-    >>> response = permutive.users.get('dnshio')
-    >>> user_id = response.get('id')
-    >>> permutive.events.track('CustomerSubscribed', user_id, product_type='digital', active=True)

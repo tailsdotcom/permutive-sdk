@@ -1,6 +1,11 @@
-from permutive.base import RequestsHTTPClient
-from permutive.event import Event
-from permutive.user import User
+# -*- coding: utf-8 -*-
+from .base import RequestsHTTPClient
+from .event import Event
+from .user import User
+
+__author__ = """Dinesh Vitharanage"""
+__email__ = 'dvitharanage@gmail.com'
+__version__ = '0.1.0'
 
 
 class Permutive(object):
