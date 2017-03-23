@@ -12,8 +12,7 @@ Tests for `permutive` module.
 import sys
 import unittest
 
-from permutive import permutive
-
+from permutive import Permutive
 
 
 class TestPermutive(unittest.TestCase):
@@ -24,5 +23,6 @@ class TestPermutive(unittest.TestCase):
     def tearDown(self):
         pass
 
-    def test_000_something(self):
-        pass
+    def test_permutive(self):
+        permutive = Permutive('12345')
+        self.assertTrue(isinstance(permutive, Permutive))
