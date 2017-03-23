@@ -24,7 +24,7 @@ setup(
     long_description=readme + '\n\n' + history,
     author="Dinesh Vitharanage",
     author_email='dvitharanage@gmail.com',
-    url='https://github.com/tailsdotcom/permutive-sdk',
+    url='https://github.com/tailsdotcom/permutive-sdk-sdk',
     packages=[
         'permutive',
     ],

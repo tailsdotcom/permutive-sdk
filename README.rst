@@ -6,15 +6,15 @@ Permutive SDK
 .. image:: https://img.shields.io/pypi/v/permutive.svg
         :target: https://pypi.python.org/pypi/permutive
 
-.. image:: https://img.shields.io/travis/tailsdotcom/permutive.svg
-        :target: https://travis-ci.org/tailsdotcom/permutive
+.. image:: https://img.shields.io/travis/tailsdotcom/permutive-sdk.svg
+        :target: https://travis-ci.org/tailsdotcom/permutive-sdk
 
 .. image:: https://readthedocs.org/projects/permutive/badge/?version=latest
         :target: https://permutive.readthedocs.io/en/latest/?badge=latest
         :alt: Documentation Status
 
-.. image:: https://pyup.io/repos/github/tailsdotcom/permutive/shield.svg
-     :target: https://pyup.io/repos/github/tailsdotcom/permutive/
+.. image:: https://pyup.io/repos/github/github.com/tailsdotcom/permutive-sdk-sdk/shield.svg
+     :target: https://pyup.io/repos/github/github.com/tailsdotcom/permutive-sdk-sdk/
      :alt: Updates
 
 
