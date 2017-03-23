@@ -13,8 +13,8 @@ Permutive SDK
         :target: https://permutive.readthedocs.io/en/latest/?badge=latest
         :alt: Documentation Status
 
-.. image:: https://pyup.io/repos/github/github.com/tailsdotcom/permutive-sdk-sdk/shield.svg
-     :target: https://pyup.io/repos/github/github.com/tailsdotcom/permutive-sdk-sdk/
+.. image:: https://pyup.io/repos/github/github.com/tailsdotcom/permutive-sdk/shield.svg
+     :target: https://pyup.io/repos/github/github.com/tailsdotcom/permutive-sdk/
      :alt: Updates
 
 
