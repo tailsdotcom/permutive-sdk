@@ -1,8 +1,11 @@
 # -*- coding: utf-8 -*-
+from .util import none_default_namedtuple
 from .base import Resource
 
+Event = none_default_namedtuple('Event', 'name, user_id, id, properties, time')
 
-class Event(Resource):
+
+class EventResource(Resource):
 
     def track(self, event_name, user_id, **properties):
         """
@@ -14,11 +17,12 @@ class Event(Resource):
         :param properties: keyword arguments representing event properties to be sent
         :return: dict 
         """
-        return self.client.request('POST', '/events', data={
+        result = self.client.request('POST', '/events', data={
             'user_id': user_id,
             'name': event_name,
             'properties': properties
         })
+        return Event(**result)
 
     def get(self, user_id, start=None, end=None):
         """
@@ -26,7 +30,7 @@ class Event(Resource):
         :param user_id: 
         :param start: (optional) datetime
         :param end: (optional) datetime
-        :return: 
+        :return: Generator that return Event objects
         """
         data = {'user_id': user_id}
         if start:
@@ -34,4 +38,7 @@ class Event(Resource):
         if end:
             data['end'] = end.isoformat()
 
-        return self.client.request('GET', '/events', data=data)
+        result = self.client.request('GET', '/events', data=data)
+
+        for event in result:
+            yield Event(**event)
