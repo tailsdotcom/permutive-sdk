@@ -9,7 +9,7 @@ Permutive SDK
 .. image:: https://img.shields.io/travis/tailsdotcom/permutive-sdk.svg
         :target: https://travis-ci.org/tailsdotcom/permutive-sdk
 
-.. image:: https://readthedocs.org/projects/permutive/badge/?version=latest
+.. image:: https://readthedocs.org/projects/permutive-sdk/badge/?version=latest
         :target: https://permutive-sdk.readthedocs.io/en/latest/?badge=latest
         :alt: Documentation Status
 
