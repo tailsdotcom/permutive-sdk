@@ -10,7 +10,7 @@ Permutive SDK
         :target: https://travis-ci.org/tailsdotcom/permutive-sdk
 
 .. image:: https://readthedocs.org/projects/permutive/badge/?version=latest
-        :target: https://permutive.readthedocs.io/en/latest/?badge=latest
+        :target: https://permutive-sdk.readthedocs.io/en/latest/?badge=latest
         :alt: Documentation Status
 
 .. image:: https://pyup.io/repos/github/tailsdotcom/permutive-sdk/shield.svg
@@ -22,13 +22,13 @@ Python wrapper for Permutive API
 
 
 * Free software: MIT license
-* Documentation: https://permutive.readthedocs.io.
+* Documentation: https://permutive-sdk.readthedocs.io.
 
 
 Features
 --------
 
-* TODO
+This package aims to provide an easy to use python interface for interacting with Permutive API
 
 Credits
 ---------
