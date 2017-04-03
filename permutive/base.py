@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
+import datetime
 import requests
 
+from permutive.util import normalise_to_isoformat
 from .exceptions import PermutiveApiException
 
 
@@ -58,6 +60,8 @@ class RequestsHTTPClient(HTTPClient):
         except TypeError:
             pass
 
+        data = self._normalise(data)
+
         if method == 'GET':
             response = requests.get(uri, headers=self._headers, params=data)
         else:
@@ -70,4 +74,16 @@ class RequestsHTTPClient(HTTPClient):
         except ValueError:
             # Non error status with empty body
             return True
+
+    def _normalise(self, data):
+        """
+        Normalise request fields by converting to formats expected by the API
+        :param data: dict
+        :return: dict
+        """
+        try:
+            return {k: normalise_to_isoformat(v) for k, v in data.iteritems()}
+        except AttributeError:
+            return data
+
 

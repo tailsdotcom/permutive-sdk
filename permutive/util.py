@@ -1,5 +1,7 @@
 import collections
 
+import datetime
+
 
 def none_default_namedtuple(typename, field_names, default_values=()):
     """
@@ -14,3 +16,6 @@ def none_default_namedtuple(typename, field_names, default_values=()):
     T.__new__.__defaults__ = tuple(prototype)
     return T
 
+
+def normalise_to_isoformat(val):
+    return val.isoformat() if isinstance(val, datetime.datetime) else val

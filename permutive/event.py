@@ -1,4 +1,6 @@
 # -*- coding: utf-8 -*-
+import re
+
 from .util import none_default_namedtuple
 from .base import Resource
 
@@ -17,6 +19,8 @@ class EventResource(Resource):
         :param properties: keyword arguments representing event properties to be sent
         :return: dict 
         """
+        if re.match('^[\w-]+$', event_name) is None:
+            raise ValueError('event_name should only contain A-Za-z0-9_')
         result = self.client.request('POST', '/events', data={
             'user_id': user_id,
             'name': event_name,
