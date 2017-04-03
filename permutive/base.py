@@ -82,7 +82,10 @@ class RequestsHTTPClient(HTTPClient):
         :return: dict
         """
         try:
-            return {k: normalise_to_isoformat(v) for k, v in data.iteritems()}
+            d = {}
+            for k, v in data.iteritems():
+                d[k] = normalise_to_isoformat(v)
+            return d
         except AttributeError:
             return data
 
