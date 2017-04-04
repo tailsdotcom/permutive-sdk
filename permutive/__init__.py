@@ -16,7 +16,7 @@ class Permutive(object):
                 'Access key required for Permutive API but none given'
             )
 
-        self.client = RequestsHTTPClient(private_api_key, request_timeout_seconds=request_timeout_seconds)
+        self.client = RequestsHTTPClient(private_api_key, timeout=request_timeout_seconds)
         self.events = EventResource(self.client)
         self.users = UserResource(self.client)
 
