@@ -5,7 +5,7 @@ from .user import UserResource
 
 __author__ = """Dinesh Vitharanage"""
 __email__ = 'dvitharanage@gmail.com'
-__version__ = '0.2.0'
+__version__ = '0.3.0'
 
 
 class Permutive(object):
