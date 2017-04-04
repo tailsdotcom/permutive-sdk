@@ -1,6 +1,7 @@
 # -*- coding: utf-8 -*-
 import datetime
 import requests
+from requests import RequestException
 
 from permutive.util import normalise_to_isoformat
 from .exceptions import PermutiveApiException
@@ -9,12 +10,13 @@ from .exceptions import PermutiveApiException
 class HTTPClient(object):
     BASE_URL = 'https://api.permutive.com/'
 
-    def __init__(self, private_key, base_url=None, api_version='v1.1'):
+    def __init__(self, private_key, base_url=None, api_version='v1.1', timeout=5):
         self._headers = {
             'X-API-Key': private_key
         }
         self.base_url = (base_url or self.BASE_URL).rstrip('/')
         self.api_version = api_version
+        self.timeout = timeout
 
     def request(self, method, endpoint, data=None, headers=None,):
         """
@@ -63,9 +65,9 @@ class RequestsHTTPClient(HTTPClient):
         data = self._normalise(data)
 
         if method == 'GET':
-            response = requests.get(uri, headers=self._headers, params=data)
+            response = requests.get(uri, headers=self._headers, params=data, timeout=self.timeout)
         else:
-            response = requests.request(method.upper(), uri, headers=self._headers, json=data)
+            response = requests.request(method.upper(), uri, headers=self._headers, json=data, timeout=self.timeout)
 
         if not response.ok:
             raise PermutiveApiException(response)
