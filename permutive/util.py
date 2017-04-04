@@ -2,6 +2,8 @@ import collections
 
 import datetime
 
+import arrow
+
 
 def none_default_namedtuple(typename, field_names, default_values=()):
     """
@@ -23,4 +25,4 @@ def normalise_to_isoformat(val):
         for k, v in val.iteritems():
             d[k] = normalise_to_isoformat(v)
             return d
-    return val.isoformat() if isinstance(val, (datetime.datetime, datetime.date)) else val
+    return arrow.get(val).isoformat() if isinstance(val, (datetime.datetime, datetime.date)) else val
