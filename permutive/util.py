@@ -24,5 +24,6 @@ def normalise_to_isoformat(val):
         d = {}
         for k, v in val.iteritems():
             d[k] = normalise_to_isoformat(v)
-            return d
+
+        return d
     return arrow.get(val).isoformat() if isinstance(val, (datetime.datetime, datetime.date)) else val

@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+from permutive.exceptions import PermutiveApiException
 from .util import none_default_namedtuple
 from .base import Resource
 
@@ -47,12 +48,18 @@ class UserResource(Resource):
         """
         Fetch a user from remote using a custom id
         :param custom_id: string or stringifyable value. 
-        :return: User
+        :return: User|None
         """
-        result = self.client.request('GET', '/identities/{}'.format(custom_id))
-        result['id'] = result.pop('user_id')  # smh
-        result['custom_id'] = custom_id
-        return User(**result)
+        try:
+            result = self.client.request('GET', '/identities/{}'.format(custom_id))
+            result['id'] = result.pop('user_id')  # smh
+            result['custom_id'] = custom_id
+            return User(**result)
+        except PermutiveApiException, e:
+            if e.status_code == 404:
+                return None
+            else:
+                raise e
 
     def update(self, custom_id, **properties):
         """
