@@ -55,7 +55,7 @@ class UserResource(Resource):
             result['id'] = result.pop('user_id')  # smh
             result['custom_id'] = custom_id
             return User(**result)
-        except PermutiveApiException, e:
+        except PermutiveApiException as e:
             if e.status_code == 404:
                 return None
             else:
