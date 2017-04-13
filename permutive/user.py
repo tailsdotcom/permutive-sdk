@@ -67,12 +67,14 @@ class UserResource(Resource):
         NOTE: This method overwrites existing properties
         :param custom_id: string or stringifyable value. 
         :param properties: user properties 
-        :return: User
+        :return: User|None
         """
         result = self.client.request('PATCH', '/identities/{}'.format(custom_id), {
             'properties': properties
         })
-        return User(**result)
+        if result is True:
+            return User(None, custom_id, properties)
+        return None
 
     def delete(self, custom_id):
         """
