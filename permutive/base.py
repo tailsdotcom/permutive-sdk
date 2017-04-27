@@ -71,7 +71,11 @@ class RequestsHTTPClient(HTTPClient):
 
         if not response.ok:
             raise PermutiveApiException(response)
-        return response.json()
+        try:
+            return response.json()
+        except ValueError:
+            # Non error status with empty body
+            return True
 
     def _normalise(self, data):
         """
