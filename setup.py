@@ -20,7 +20,7 @@ test_requirements = [
 
 setup(
     name='permutive',
-    version='0.6.0',
+    version='0.7.0',
     description="Python wrapper for Permutive API",
     long_description=readme + '\n\n' + history,
     author="Dinesh Vitharanage",
